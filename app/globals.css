@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --leaf-900: #173220;
+  --leaf-700: #26512e;
+  --leaf-500: #3f7f48;
+  --cream-100: #f6efde;
+  --cream-50: #fbf8f1;
+  --gold-500: #b88b1f;
+}
+
+html, body {
+  background: var(--cream-50);
+  color: var(--leaf-900);
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-leaf-700 px-6 py-3 text-sm font-semibold text-cream-50 shadow-soft transition hover:bg-leaf-900 active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-leaf-700/30 bg-white/60 px-6 py-3 text-sm font-semibold text-leaf-900 backdrop-blur transition hover:bg-white;
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-gold-400 to-gold-500 px-7 py-3.5 text-sm font-bold text-leaf-950 shadow-soft transition hover:from-gold-500 hover:to-gold-600 active:scale-[0.98];
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-leaf-700/20 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-leaf-700 backdrop-blur;
+  }
+  .section-title {
+    @apply font-display text-3xl leading-tight text-leaf-900 sm:text-4xl lg:text-5xl;
+  }
+  .section-sub {
+    @apply mt-4 max-w-2xl text-base text-leaf-900/70 sm:text-lg;
+  }
+}
+
+.bottle-shadow {
+  filter: drop-shadow(0 30px 40px rgba(23, 50, 32, 0.35));
+}
