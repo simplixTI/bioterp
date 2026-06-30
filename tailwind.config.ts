@@ -8,59 +8,75 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'Georgia', 'serif']
+        sans: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif']
       },
       colors: {
+        // remapped to brand cobalt blue scale (label color)
         leaf: {
-          50: '#f1f7f2',
-          100: '#deecdf',
-          200: '#bedac1',
-          300: '#92be97',
-          400: '#629c69',
-          500: '#3f7f48',
-          600: '#2e6437',
-          700: '#26512e',
-          800: '#1f4126',
-          900: '#173220',
-          950: '#0c1d12'
+          50: '#eef5ff',
+          100: '#dbeaf9',
+          200: '#b9d6f2',
+          300: '#86b8e6',
+          400: '#4f95d6',
+          500: '#1875e0',
+          600: '#125bb3',
+          700: '#0e498f',
+          800: '#0b3870',
+          900: '#0a2a55',
+          950: '#06192e'
         },
+        // warm editorial cream / paper
         cream: {
-          50: '#fbf8f1',
-          100: '#f6efde',
-          200: '#ecdfba',
-          300: '#dec78a',
-          400: '#d0ab5b'
+          50: '#f7f2e8',
+          100: '#efe7d5',
+          200: '#e3d4b2',
+          300: '#d2bb88',
+          400: '#bf9d5b'
         },
+        // lime-green accent (badges on bottle label)
         gold: {
-          400: '#d4a73a',
-          500: '#b88b1f',
-          600: '#9a721a'
+          400: '#b9e36a',
+          500: '#9fcf4d',
+          600: '#7eb030'
+        },
+        ink: {
+          50: '#f5f7fa',
+          900: '#0c1a2b',
+          950: '#06101c'
         }
       },
       backgroundImage: {
         'hero-radial':
-          'radial-gradient(ellipse at top, rgba(190,218,193,0.45), transparent 60%), linear-gradient(180deg, #f7f3e8 0%, #ede4cf 100%)',
+          'radial-gradient(ellipse at top right, rgba(134,184,230,0.35), transparent 55%), radial-gradient(ellipse at bottom left, rgba(191,157,91,0.18), transparent 55%), linear-gradient(180deg, #f7f2e8 0%, #efe7d5 100%)',
         'leaf-gradient':
-          'linear-gradient(135deg, #173220 0%, #26512e 50%, #3f7f48 100%)'
+          'linear-gradient(135deg, #06192e 0%, #0e498f 55%, #1875e0 100%)',
+        'grain':
+          "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")"
       },
       boxShadow: {
-        soft: '0 10px 30px -10px rgba(23,50,32,0.25)',
-        card: '0 20px 50px -20px rgba(23,50,32,0.35)'
+        soft: '0 10px 30px -10px rgba(12,26,43,0.20)',
+        card: '0 24px 60px -24px rgba(12,26,43,0.35)',
+        bottle: '0 50px 80px -30px rgba(6,16,28,0.55)'
       },
       keyframes: {
         float: {
           '0%,100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' }
+          '50%': { transform: 'translateY(-14px)' }
         },
         fadeUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' }
         }
       },
       animation: {
-        float: 'float 6s ease-in-out infinite',
-        'fade-up': 'fadeUp 0.7s ease-out both'
+        float: 'float 7s ease-in-out infinite',
+        'fade-up': 'fadeUp 0.7s ease-out both',
+        shimmer: 'shimmer 8s linear infinite'
       }
     }
   },
